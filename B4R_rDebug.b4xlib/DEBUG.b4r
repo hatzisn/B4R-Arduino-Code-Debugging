@@ -1,0 +1,58 @@
+﻿Build1=Default,B4RDev
+Group=Default Group
+Library1=rcore
+Library2=rrandomaccessfile
+Module1=Debug
+NumberOfFiles=0
+NumberOfLibraries=2
+NumberOfModules=1
+Version=3.9
+@EndOfDesignText@
+
+#Region Project Attributes
+	#AutoFlushLogs: True
+	#CheckArrayBounds: True
+	#StackBufferSize: 300
+#End Region
+'Ctrl+Click to open the C code folder: ide://run?File=%WINDIR%\System32\explorer.exe&Args=%PROJECT%\Objects\Src
+
+Sub Process_Globals
+	Public Serial1 As Serial
+End Sub
+
+Private Sub AppStart
+	Serial1.Initialize(9600)
+	Log("AppStart")
+	Dim i As Int = 1
+	Dim l As Long = 2
+	Dim b As Byte = 45
+	Dim ui As UInt = 31
+	Dim ul As ULong = 32
+	Dim f As Float = 51.45
+	Dim d As Double = 61.75
+	
+	
+	
+	Debug.BP(i)
+	Debug.BP(l)
+	Debug.BP(b)
+	Debug.BP(ui)
+	Debug.BP(ul)
+	Debug.BP(Null)
+	Debug.BP(f)
+	Debug.BP(d)
+	Debug.BP2(Array As String("The value of the double variable is ", d, " and the value of the float is ", f))
+	
+	Dim ii As Int = 0
+	Log("I start")
+	Debug.BP2(Array As String("The value of the ii variable is ", ii))
+	ii = ii + 1
+	Debug.BP2(Array As String("The value of the ii variable is ", ii))
+	ii = ii + 2
+	Debug.BP2(Array As String("The value of the ii variable is ", ii))
+	ii = ii + 3
+	Debug.BP2(Array As String("The value of the ii variable is ", ii))
+	Log("Ok Done")
+End Sub
+
+
